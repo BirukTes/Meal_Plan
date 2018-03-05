@@ -41,6 +41,8 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
+    bcrypt (3.1.11)
+    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     builder (3.2.3)
     byebug (10.0.0)
@@ -53,8 +55,14 @@ GEM
       xpath (>= 2.0, < 4.0)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
+    clearance (1.16.1)
+      bcrypt
+      email_validator (~> 1.4)
+      rails (>= 3.1)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    email_validator (1.6.0)
+      activemodel
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -169,6 +177,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   capybara (~> 2.13)
+  clearance (~> 1.16, >= 1.16.1)
   figaro
   jbuilder (~> 2.5)
   pg (>= 0.18, < 2.0)

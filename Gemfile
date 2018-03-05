@@ -45,4 +45,8 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#
 gem 'figaro'
+
+# Rails authentication & authorization with email & password.
+gem 'clearance', '~> 1.16', '>= 1.16.1'
