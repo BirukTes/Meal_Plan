@@ -1,0 +1,28 @@
+<% if @errors.present? %>
+  <div class="errors">
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%# Form for, will look at the recipe instance and
+find out if it persisted or not, and if it is not persisted
+it will redirect to create action, if it is then to edit (update action) and it will change
+the text of this form, whether or not this is persisted.
+Can notice we have not given it which URL it should post to%>
+<%= form_for @recipe do |form| %>
+  <div class="form_group">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="form_group">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

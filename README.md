@@ -1,14 +1,16 @@
-# README
+# **Meal Planner Rails Application**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I am following Keith Thompson's [CodeJounery Meal Plan](https://github.com/coderjourney/meal_plan) tutorial
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby 2.4.1
 
-* System dependencies
-
+* System dependencies 
+    * [Factory_Girl](https://github.com/thoughtbot/factory_bot)
+    * [MiniTest](https://github.com/blowmage/minitest-rails)
+    * [Faker](https://github.com/stympy/faker)
+    
 * Configuration
 
 * Database creation
@@ -21,4 +23,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
