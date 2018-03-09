@@ -1,0 +1,38 @@
+<%= render partial: "shared/errors" %>
+
+<%#	This form will handle the create, editing/update actions %>
+<%= form_for(@meal_plan) do |form| %>
+  <%# Pre-populated today and next week %>
+  <%= form.hidden_field :start_date %>
+  <%= form.hidden_field :end_date %>
+
+  <div class="meals">
+    <%# Sub-form builders, meal is actual model in this system
+    and a meal plan has many meals. So, this will return form builder
+    that is specific for each meal. So, take each of these and add fields
+    to the overall form %>
+    <%= form.fields_for :meals do |meal_fields| %>
+      <%# Hidden id useful for editing,
+      hidden date, as this is not going to be customisable by the user
+      because these are generated on specific date based on how the meal plan is %>
+      <%= meal_fields.hidden_field :id %>
+      <%= meal_fields.hidden_field :date %>
+
+      <%# A little heading, so the user knows what date this date this is
+      for. This will render out the actual meal (object), display in way
+      that makes sense to the user %>
+      <p><%= meal_fields.object.date.to_date %></p>
+
+      <%# The actual data the user can customise %>
+      <div class="form-control">
+        <%= meal_fields.label(:recipe_id) %>
+        <%= meal_fields.select(:recipe_id, current_user.recipe_options) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%# The form builder will handle the naming %>
+    <%= form.submit %>
+  </div>
+<% end %>

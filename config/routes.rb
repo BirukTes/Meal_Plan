@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   # Gives all the routes required for the controller
   resources :recipes
+  resources :meal_plans
 end
